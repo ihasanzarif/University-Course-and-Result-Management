@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    
     @Scripts.Render("~/bundles/modernizr")
-        @RenderSection("style", required: false)
-   
+    @RenderSection("style", required: false)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,7 +18,6 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("University Management", "Index", "Home", null, new {@class = "navbar-brand"})
-  
           </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -28,14 +25,8 @@
                     <li>@Html.ActionLink("Department", "Index", "Department")</li>
                     <li>@Html.ActionLink("Courses", "Index", "Course")</li>
                     <li>@Html.ActionLink("Student", "Index", "Student")</li>
-                    
                     <li>@Html.ActionLink("Classroom", "Index", "University")</li>
-                    
-                    
-                    
                 </ul>
-
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
@@ -43,10 +34,9 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Developed By Recursion</p>
+            <p>&copy; @DateTime.Now.Year - Developed By <a href="https://github.com/ihasanzarif">Ihasan Zarif</a></p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
