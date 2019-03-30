@@ -7,19 +7,16 @@
 <h3>Department</h3>
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-
-
         <li>@Html.ActionLink("Save Department", "SaveDepartment", "Department")</li>
         <li>@Html.ActionLink("View Department", "ViewDepartment", "Department")</li>
-      
         <li>@Html.ActionLink("Save Teacher", "SaveTeacher", "Department")</li>
-       
     </ul>
-
 </div>
-<fieldset>
-    <legend>View All Departments</legend>
-
+<br />
+<br />
+<div class="container">
+    <h4>View All Departments</h4>
+    <hr />
     <table id="myTable" class="table table-bordered table-hover table-striped">
         <thead>
             <tr>
@@ -28,15 +25,13 @@
             </tr>
         </thead>
         <tbody>
-            
-                @foreach (Department department in departments)
-                {
-                    <tr>
-                        <td>@department.Code</td>
-                        <td>@department.Name</td>
-                    </tr>
-                }
-            
+            @foreach (Department department in departments)
+            {
+                <tr>
+                    <td>@department.Code</td>
+                    <td>@department.Name</td>
+                </tr>
+            }
         </tbody>
     </table>
-</fieldset>
+</div>

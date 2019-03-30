@@ -3,7 +3,6 @@
     ViewBag.Title = "Course Assaign Teacher";
 }
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -17,43 +16,30 @@
     </style>
 </head>
 <body>
-
     <h3>Courses</h3>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-
             <li>@Html.ActionLink("Save Course", "SaveCourse", "Course")</li>
             <li>@Html.ActionLink("Course Statics", "ViewCourseStatics", "Department")</li>
             <li>@Html.ActionLink("Course Assign Teacher", "CourseAssaignTeacher", "Department")</li>
             <li>@Html.ActionLink("Unassign Courses", "UnassignCourses", "Department")</li>
-
         </ul>
-
     </div>
-    
 <div>
-
-
     <fieldset>
         <legend>Course Assaign To Teacher</legend>
         <form class="form-horizontal" method="POST" id="CourseAssaign">
-
-
             <div class="form-group">
                 <label class="control-label col-sm-2" for="DepartmentId">Department</label>
                 <div class="col-sm-6">
                     <select id="DepartmentId" name="DepartmentId" class="form-control" onchange="">
                         <option value="">Select</option>
-
                         @foreach (Department department in ViewBag.departments)
                         {
                             <option value="@department.Id">@department.Name</option>
                         }
-
-
                     </select>
                 </div>
-
             </div>
 
             <div class="form-group">
@@ -62,44 +48,36 @@
                     <select id="Id" name="Id" class="form-control" onchange=""></select>
                 </div>
             </div>
-
-
             <div class="form-group">
                 <label class="control-label col-sm-2" for="CreditTake">Credit to be taken</label>
                 <div class="col-sm-6">
-                    <input readonly id="CreditTake" name="CreditTake" type="text" value=""/>
-
+                    <input readonly id="CreditTake" class="form-control" name="CreditTake" type="text" value=""/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="CreditLeft">Remaining Credit</label>
                 <div class="col-sm-6">
-                    <input readonly id="CreditLeft" name="CreditLeft" type="text" value=""/>
-
+                    <input readonly id="CreditLeft" class="form-control" name="CreditLeft" type="text" value=""/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-sm-2" for="CourseId">Course Code</label>
                 <div class="col-sm-6">
                     <select id="CourseId" name="CourseId" class="form-control" onchange=""></select>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Name">Name</label>
                 <div class="col-sm-6">
-                    <input readonly id="Name" name="Name"/>
+                    <input readonly id="Name" class="form-control" name="Name"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Credit">Credit</label>
                 <div class="col-sm-6">
-                    <input readonly id="Credit" name="Credit" type="text"/>
+                    <input readonly id="Credit" class="form-control" name="Credit" type="text"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default" onclick="myFunction()" value="submit">Save</button>
@@ -111,22 +89,18 @@
     {
          if (ViewBag.assaigned == 2)
         {
-            <label>Course already assaigned !!!</label>
-
+            <label>Course already assaigned !</label>
         }
         else
         {
-            <label>Course assaigned sucessfully !!!</label>
-
+            <label>Course assaigned sucessfully !</label>
         }
-
     }
 </div>
 
 @section scripts{
     <script src="~/Scripts/jquery.validate.js"></script>
     <script>
-        
         $(document).ready(function() {
             $("#DepartmentId").change(function() {
                 var deptId = $("#DepartmentId").val();
@@ -148,7 +122,6 @@
                             $("#CourseId").append('<option value="' + value.Id + '">' + value.Code + '</option>');
 
                         });
-
                     }
                 });
             });
@@ -212,7 +185,6 @@
                     Id: "Please select Teacher"
                 }
             });
-
         });
     </script>
 }
